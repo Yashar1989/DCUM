@@ -1,0 +1,15 @@
+          <nav aria-label="breadcrumb" class="main-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'account:profile' %}">Home</a></li>
+                {% if request.resolver_match.url_name == 'profile' %}
+                    <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+                {% elif request.resolver_match.url_name == 'profile-edit' %}
+                    <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+                {% elif request.resolver_match.url_name == 'password-change' %}
+                    <li class="breadcrumb-item active" aria-current="page">Change Password</li>
+                {% endif %}
+            </ol>
+            {% for msg in messages %}
+            <p class="alert alert-{{msg.tags}}">{{msg}}</p>
+            {% endfor %}
+          </nav>

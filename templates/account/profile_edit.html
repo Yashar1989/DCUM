@@ -1,0 +1,115 @@
+{% extends 'account/base.html' %}
+{% block title %}Edit Profile{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="main-body">
+    
+          <!-- Breadcrumb -->
+          {% include 'account/top_menu.html' %}
+          <!-- /Breadcrumb -->
+    
+          <div class="row gutters-sm">
+            {% include 'account/side_widget.html' %}
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">First Name:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.first_name}}
+                    </div>
+                  </div>
+                  <hr>
+                    <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Last Name:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.last_name}}
+                    </div>
+                  </div>
+                  <hr>
+                    <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Avatar:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.avatar}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.address}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Job Title:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.job_title}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Website:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.website}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">GitHub Username:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.github}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Twitter ID:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.twitter}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Linkedin:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{form.linkedin}}
+                    </div>
+                  </div>
+
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                        <button type="submit" class="btn btn-info">Submit Edit</button>
+                    </div>
+                  </div>
+                </form>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+{% endblock content %}

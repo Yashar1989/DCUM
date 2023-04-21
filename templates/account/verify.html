@@ -1,0 +1,25 @@
+{% extends 'account/base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-4 mx-auto py-5">
+            {% for msg in messages %}
+                <p class="alert alert-{{msg.tags}}">{{msg}}</p>
+            {% endfor %}
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% for field in form %}
+
+            <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">{{field.label}} :</label>
+            {{field}}
+            </div>
+            
+            {% endfor %}
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Complete Register</button>
+        </form>
+    </div>
+    </div>
+</div>
+{% endblock content %}

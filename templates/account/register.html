@@ -1,0 +1,29 @@
+{% extends 'account/base.html' %}
+{% block title %}<title>Register</title>{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-4 mx-auto py-5">
+        <form method="POST" action="">
+            {% csrf_token %}
+            {% for field in form %}
+
+            <div class="form-outline mb-4">
+            <label class="form-label" for="form2Example1">{{field.label}} :</label>
+            {{field}}
+            </div>
+            
+            {% endfor %}
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Register</button>
+        
+            <!-- Register buttons -->
+            <div class="text-center">
+            <p>You Have Already an Account? <a href="{% url 'account:index' %}">Login</a></p>
+            </div>
+        </form>
+    </div>
+    </div>
+</div>
+
+{% endblock content %}

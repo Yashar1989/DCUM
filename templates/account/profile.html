@@ -1,0 +1,85 @@
+{% extends 'account/base.html' %}
+{% block title %}Profile{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="main-body">
+    
+          <!-- Breadcrumb -->
+            {% include 'account/top_menu.html' %}
+          <!-- /Breadcrumb -->
+    
+          <div class="row gutters-sm">
+            {% include 'account/side_widget.html' %}
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{ profile.get_fullname }}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{user.email}} <small>Change Email</small>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{user.phone_number}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {% if profile.address %}
+                            {{profile.address}}
+                        {% else %}
+                            هنوز آدرسی ثبت نکردید
+                        {% endif %}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Date Joined:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{user.date_joined}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-12">
+                      <a class="btn btn-info " target="__blank" href="{% url 'account:profile-edit' %}">Edit Profile</a>
+                      <a class="btn btn-info " target="__blank" href="{% url 'account:password-change' %}">Change Password</a>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+{% endblock content %}
