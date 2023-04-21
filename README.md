@@ -1,3 +1,3 @@
-# DjAccounts-FA
-Persian User model for Django
+# Django Custom User Model
+Custom User model for Django
 
